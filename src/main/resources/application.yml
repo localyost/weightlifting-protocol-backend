@@ -1,8 +1,11 @@
 spring:
   application:
     name: weightlifting-protocol-backend
+  jpa:
+    hibernate:
+      ddl-auto: create
   datasource:
     name: datasource
-    url: jdbc:postgresql://localhost:5432/wl_protocol?autoReconnect=true&useSSL=false
+    url: jdbc:postgresql://localhost:5432/protocol?autoReconnect=true&useSSL=false
     username: postgres
     password: postgres
