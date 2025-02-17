@@ -16,6 +16,8 @@ public class Athlete extends BaseEntity {
     @OneToOne
     private Club club;
 
+    private boolean active = true;
+
     private int birthYear;
     
 }

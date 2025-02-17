@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -19,5 +20,9 @@ public class Competition extends BaseEntity {
     @OneToMany
     private List<Participant> participants;
 
+    @OneToMany
+    List<Club> clubs;
+
+    private transient Map<Club, List<Participant>> clubToParticipants;
 
 }

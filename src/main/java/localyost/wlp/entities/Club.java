@@ -11,10 +11,6 @@ import java.util.List;
 @Data
 public class Club extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String name;
     private String description;
 

@@ -1,6 +1,6 @@
 package localyost.wlp.controllers;
 
-import localyost.wlp.repositories.CompetitionRepository;
+import localyost.wlp.services.CompetitionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/competitions")
 public class CompetitionController {
 
-    private final CompetitionRepository competitionRepository;
+    private final CompetitionService competitionService;
 
     @PostMapping("/start/{id}")
     public ResponseEntity<?> customSearch(@PathVariable Long id) {
 
-        competitionRepository.start(id);
+//        competitionRepository.start(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
