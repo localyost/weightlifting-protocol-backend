@@ -2,6 +2,7 @@ package localyost.wlp.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
+import localyost.wlp.enums.Gender;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,6 +13,7 @@ public class Athlete extends BaseEntity {
 
     private String firstName;
     private String lastName;
+    private Gender gender;
 
     @OneToOne
     private Club club;

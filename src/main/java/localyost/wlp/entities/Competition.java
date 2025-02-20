@@ -2,6 +2,7 @@ package localyost.wlp.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import localyost.wlp.enums.CompetitionType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,6 +17,7 @@ public class Competition extends BaseEntity {
 
     private String title;
     private Date started;
+    private CompetitionType type;
 
     @OneToMany
     private List<Participant> participants;

@@ -1,9 +1,13 @@
 package localyost.wlp.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -14,4 +18,8 @@ public class Participant extends BaseEntity {
     private Athlete athlete;
 
     private float bodyWeight;
+
+    @OneToMany
+    List<Attempt> attempts;
+
 }
