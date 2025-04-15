@@ -24,8 +24,8 @@ repositories {
 }
 
 val lombokVersion = "1.18.36"
-val openapiVersion = "2.5.0"
-val springBootVersion="3.3.5"
+val openapiVersion = "2.8.3"
+val springBootVersion="3.4.4"
 val postgresVersion="42.7.4"
 
 dependencies {
@@ -41,13 +41,15 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-websocket:$springBootVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
 
-//    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapiVersion")
-    implementation("org.springframework.data:spring-data-rest-hal-explorer")
+    //DATA Explorers
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapiVersion")
+//    implementation("org.springframework.data:spring-data-rest-hal-explorer")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    //POSTGRES
-    runtimeOnly("org.postgresql:postgresql:$postgresVersion")
+    //SQLite
+    runtimeOnly("org.xerial:sqlite-jdbc")
+    runtimeOnly("org.hibernate.orm:hibernate-community-dialects")
 }
 
 tasks.withType<Test> {

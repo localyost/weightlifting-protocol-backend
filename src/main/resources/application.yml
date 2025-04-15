@@ -4,8 +4,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    show-sql: true
   datasource:
-    name: datasource
-    url: jdbc:postgresql://localhost:5432/protocol?autoReconnect=true&useSSL=false
-    username: postgres
-    password: postgres
+    name: sqlite
+    url: jdbc:sqlite:wlprotocol.db
+    driver-class-name: org.sqlite.JDBC
+#logging:
+#  level:
+#    org.springdoc.core.utils.SpringDocAnnotationsUtils: ERROR
